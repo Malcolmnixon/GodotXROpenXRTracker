@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://btidkk2aex3r1"]
+
+[ext_resource type="Script" path="res://hand_demo.gd" id="1_76874"]
+[ext_resource type="Texture2D" uid="uid://drjoya1j38i21" path="res://assets/ambientcg.com/Carpet003_1K-JPG_Color.jpg" id="2_dkjxv"]
+[ext_resource type="PackedScene" uid="uid://b0kgwprjxrwxi" path="res://assets/hands/LeftHandHumanoid.gltf" id="3_q6yl7"]
+[ext_resource type="PackedScene" uid="uid://b6jo17mcs1vlf" path="res://assets/hands/RightHandHumanoid.gltf" id="4_go16s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cqqj5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_elgeq"]
+sky_material = SubResource("ProceduralSkyMaterial_cqqj5")
+
+[sub_resource type="Environment" id="Environment_w0xf3"]
+background_mode = 2
+sky = SubResource("Sky_elgeq")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_603qd"]
+albedo_texture = ExtResource("2_dkjxv")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0334b"]
+material = SubResource("StandardMaterial3D_603qd")
+size = Vector2(8, 8)
+
+[node name="HandDemo" type="Node3D"]
+script = ExtResource("1_76874")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w0xf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0.25, 0.808013, 0.533494, -0.433013, -0.39952, 0.808012, 0, 10, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_0334b")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+near = 0.08
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="LeftXRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1, 0)
+target = NodePath("LeftHandHumanoid/LeftHandHumanoid/Skeleton3D")
+
+[node name="LeftHandHumanoid" parent="XROrigin3D/LeftXRHandModifier3D" instance=ExtResource("3_q6yl7")]
+unique_name_in_owner = true
+
+[node name="RightXRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0)
+hand_tracker = &"/user/right"
+target = NodePath("RightHandHumanoid/RightHandHumanoid/Skeleton3D")
+
+[node name="RightHandHumanoid" parent="XROrigin3D/RightXRHandModifier3D" instance=ExtResource("4_go16s")]
+unique_name_in_owner = true
+
+[connection signal="button_pressed" from="XROrigin3D/LeftController" to="." method="_on_left_controller_button_pressed"]
+[connection signal="button_pressed" from="XROrigin3D/RightController" to="." method="_on_right_controller_button_pressed"]
+
+[editable path="XROrigin3D/LeftXRHandModifier3D/LeftHandHumanoid"]
+[editable path="XROrigin3D/RightXRHandModifier3D/RightHandHumanoid"]
