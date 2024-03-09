@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp03g2eyiqfhk"
 path.s3tc="res://.godot/imported/Eyebrows.png-81e06726ec4866bc98581ddfc1cb62e5.s3tc.ctex"
+path.etc2="res://.godot/imported/Eyebrows.png-81e06726ec4866bc98581ddfc1cb62e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_kun/Tex/Eyebrows.png"
-dest_files=["res://.godot/imported/Eyebrows.png-81e06726ec4866bc98581ddfc1cb62e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Eyebrows.png-81e06726ec4866bc98581ddfc1cb62e5.s3tc.ctex", "res://.godot/imported/Eyebrows.png-81e06726ec4866bc98581ddfc1cb62e5.etc2.ctex"]
 
 [params]
 

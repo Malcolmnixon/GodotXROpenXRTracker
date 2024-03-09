@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfy0xowen5pwu"
 path.s3tc="res://.godot/imported/Face_Normal.png-cdc2db21ecd337eab277912f83b1eae4.s3tc.ctex"
+path.etc2="res://.godot/imported/Face_Normal.png-cdc2db21ecd337eab277912f83b1eae4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_chan/Tex/Face_Normal.png"
-dest_files=["res://.godot/imported/Face_Normal.png-cdc2db21ecd337eab277912f83b1eae4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Face_Normal.png-cdc2db21ecd337eab277912f83b1eae4.s3tc.ctex", "res://.godot/imported/Face_Normal.png-cdc2db21ecd337eab277912f83b1eae4.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://1cgxfm1dgnnb"
 path.s3tc="res://.godot/imported/EyeSockets.png-810c8451c141a0c18c9b31070c99a783.s3tc.ctex"
+path.etc2="res://.godot/imported/EyeSockets.png-810c8451c141a0c18c9b31070c99a783.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_chan/Tex/EyeSockets.png"
-dest_files=["res://.godot/imported/EyeSockets.png-810c8451c141a0c18c9b31070c99a783.s3tc.ctex"]
+dest_files=["res://.godot/imported/EyeSockets.png-810c8451c141a0c18c9b31070c99a783.s3tc.ctex", "res://.godot/imported/EyeSockets.png-810c8451c141a0c18c9b31070c99a783.etc2.ctex"]
 
 [params]
 

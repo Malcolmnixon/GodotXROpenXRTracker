@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byodb3k7y7bul"
 path.s3tc="res://.godot/imported/Eyelines.png-527dd02c664672d7492c41029a18873e.s3tc.ctex"
+path.etc2="res://.godot/imported/Eyelines.png-527dd02c664672d7492c41029a18873e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_chan/Tex/Eyelines.png"
-dest_files=["res://.godot/imported/Eyelines.png-527dd02c664672d7492c41029a18873e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Eyelines.png-527dd02c664672d7492c41029a18873e.s3tc.ctex", "res://.godot/imported/Eyelines.png-527dd02c664672d7492c41029a18873e.etc2.ctex"]
 
 [params]
 

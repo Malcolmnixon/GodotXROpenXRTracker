@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bejglp703o2jm"
 path.s3tc="res://.godot/imported/Body.png-562ef27e4ab91e1a4d2229883c165a04.s3tc.ctex"
+path.etc2="res://.godot/imported/Body.png-562ef27e4ab91e1a4d2229883c165a04.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_kun/Tex/Body.png"
-dest_files=["res://.godot/imported/Body.png-562ef27e4ab91e1a4d2229883c165a04.s3tc.ctex"]
+dest_files=["res://.godot/imported/Body.png-562ef27e4ab91e1a4d2229883c165a04.s3tc.ctex", "res://.godot/imported/Body.png-562ef27e4ab91e1a4d2229883c165a04.etc2.ctex"]
 
 [params]
 

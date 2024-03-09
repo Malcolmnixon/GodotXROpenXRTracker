@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wt1jfscp42ek"
 path.s3tc="res://.godot/imported/GlassesLenses.png-87d5f49d99ae91197542cd07a38cd6a6.s3tc.ctex"
+path.etc2="res://.godot/imported/GlassesLenses.png-87d5f49d99ae91197542cd07a38cd6a6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_chan/Tex/GlassesLenses.png"
-dest_files=["res://.godot/imported/GlassesLenses.png-87d5f49d99ae91197542cd07a38cd6a6.s3tc.ctex"]
+dest_files=["res://.godot/imported/GlassesLenses.png-87d5f49d99ae91197542cd07a38cd6a6.s3tc.ctex", "res://.godot/imported/GlassesLenses.png-87d5f49d99ae91197542cd07a38cd6a6.etc2.ctex"]
 
 [params]
 

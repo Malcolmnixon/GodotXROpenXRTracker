@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbg6wavu4j5xr"
 path.s3tc="res://.godot/imported/HairBack.png-e966bfb8b8b17d796c4558210cdae92b.s3tc.ctex"
+path.etc2="res://.godot/imported/HairBack.png-e966bfb8b8b17d796c4558210cdae92b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/test_kun/Tex/HairBack.png"
-dest_files=["res://.godot/imported/HairBack.png-e966bfb8b8b17d796c4558210cdae92b.s3tc.ctex"]
+dest_files=["res://.godot/imported/HairBack.png-e966bfb8b8b17d796c4558210cdae92b.s3tc.ctex", "res://.godot/imported/HairBack.png-e966bfb8b8b17d796c4558210cdae92b.etc2.ctex"]
 
 [params]
 
