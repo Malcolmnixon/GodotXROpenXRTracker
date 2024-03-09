@@ -1,13 +1,46 @@
 # Godot XR OpenXR Tracker
 
-This repository contains a demo project to evaluate the Godot-OpenXR-Vendors hand, body, and face tracking.
+![GitHub forks](https://img.shields.io/github/forks/Malcolmnixon/GodotXROpenXRTracker?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/Malcolmnixon/GodotXROpenXRTracker?style=plastic)
+![GitHub contributors](https://img.shields.io/github/contributors/Malcolmnixon/GodotXROpenXRTracker?style=plastic)
+![GitHub](https://img.shields.io/github/license/Malcolmnixon/GodotXROpenXRTracker?style=plastic)
 
-There are two main scenes which can be used for testing:
+This repository contains a demo project to evaluate Godot OpenXR hand, body, and face tracking.
 
-- `body_demo.tscn` tests body/face tracking
-- `hand_demo.tscn` tests hand tracking
+![OpenXR Preview](/docs/openxr_preview.png)
 
-The left controller AX/BY buttons adjust the Skeleton3D motion_scale property of the bodies or hands.
-The right controller AX/BY buttons adjust the XRServer world_scale property of the environment.
+## Versions
 
-Note that in the hands demo, touching the controller buttons will cause OpenXR to switch to controller-mode temporarily and hide the hands. Putting the controllers down for a few seconds will restore hand-tracking and show the hands again.
+This demo requires Godot 4.3-dev4 or later.
+
+## Overview
+
+Godot has built-in support for generating [XRHandTracker](https://docs.godotengine.org/en/latest/classes/class_xrhandtracker.html) data from OpenXR, and the [Godot-OpenXR-Vendors](https://github.com/GodotVR/godot_openxr_vendors) extension adds support for [XRBodyTracker](https://docs.godotengine.org/en/latest/classes/class_xrbodytracker.html) and [XRFaceTracker](https://docs.godotengine.org/en/latest/classes/class_xrfacetracker.html).
+
+This data can be used to drive avatars through the [XRHandModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrhandmodifier3d.html), [XRBodyModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrbodymodifier3d.html), and [XRFaceModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrfacemodifier3d.html) nodes.
+
+The demo scenes in this project show how this is achieved.
+
+### Body Demo (default)
+
+![Body Demo](/docs/body_demo.png)
+
+This scene contains two avatars - one worn by the player, and one mirroring the players face and body movements. These avatars are driven by [XRBodyModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrbodymodifier3d.html), and [XRFaceModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrfacemodifier3d.html) nodes.
+
+Scaling can be achieved by picking up and using the VR controllers:
+
+- Left controller AX/BY buttons adjust the Skeleton3D motion_scale property of the bodies or hands.
+- Right controller AX/BY buttons adjust the XRServer world_scale property of the environment.
+
+### Hand Demo
+
+![Hand Demo](/docs/hand_demo.png)
+
+This scene contains two hand models worn by the player to demonstrate VR hands that track the players hands. These hand models are driven by two [XRHandModifier3D](https://docs.godotengine.org/en/latest/classes/class_xrhandmodifier3d.html) nodes.
+
+Scaling can be achieved by picking up and using the VR controllers:
+
+- Left controller AX/BY buttons adjust the Skeleton3D motion_scale property of the bodies or hands.
+- Right controller AX/BY buttons adjust the XRServer world_scale property of the environment.
+
+Note that touching the controller buttons will cause OpenXR to switch to "Controller-mode" temporarily, which results in the hands being hidden. Putting the controllers down for a few seconds will restore "Hand-Tracking mode" and show the hands again.
