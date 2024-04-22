@@ -11,7 +11,9 @@ This repository contains a demo project to evaluate Godot OpenXR hand, body, and
 
 ## Versions
 
-This demo requires Godot 4.3-dev4 or later.
+This demo requires Godot 4.3-dev6+ or later.
+
+<sub>NOTE: This requires the [XR Trackers](https://github.com/godotengine/godot/pull/90645) PR which is in the Godot master branch, but no release has been made.</sub>
 
 ## Overview
 

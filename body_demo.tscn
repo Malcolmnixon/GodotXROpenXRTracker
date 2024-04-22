@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7lwweiw076kl"]
+[gd_scene load_steps=12 format=4 uid="uid://c7lwweiw076kl"]
 
 [ext_resource type="Script" path="res://body_demo.gd" id="1_7k4ei"]
 [ext_resource type="PackedScene" uid="uid://bhc6nngwjdvum" path="res://assets/test_chan/Test-Chan.fbx" id="1_lkeve"]
@@ -64,16 +64,13 @@ tracker = &"right_hand"
 [node name="Chan" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.5)
 
-[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="Chan"]
-target = NodePath("../XRBodyModifier3D/Test-Chan/Armature/Skeleton3D/Body")
+[node name="Avatar" type="XRNode3D" parent="Chan"]
+tracker = &"/user/body_tracker"
 
-[node name="XRBodyModifier3D" type="XRBodyModifier3D" parent="Chan"]
-target = NodePath("Test-Chan/Armature/Skeleton3D")
-
-[node name="Test-Chan" parent="Chan/XRBodyModifier3D" instance=ExtResource("1_lkeve")]
+[node name="Test-Chan" parent="Chan/Avatar" instance=ExtResource("1_lkeve")]
 unique_name_in_owner = true
 
-[node name="Body" parent="Chan/XRBodyModifier3D/Test-Chan/Armature/Skeleton3D" index="0"]
+[node name="Body" parent="Chan/Avatar/Test-Chan/Armature/Skeleton3D" index="0"]
 blend_shapes/Cheek_Puff_Left = 1.28996e-05
 blend_shapes/Cheek_Puff_Right = 1.28996e-05
 blend_shapes/Eye_Left_Left = 0.297788
@@ -116,23 +113,25 @@ blend_shapes/mouthPressRight = 0.0310566
 blend_shapes/mouthStretchLeft = 0.0145674
 blend_shapes/mouthStretchRight = 0.00253638
 
-[node name="GroundRing" type="MeshInstance3D" parent="Chan/XRBodyModifier3D"]
+[node name="XRBodyModifier3D" type="XRBodyModifier3D" parent="Chan/Avatar/Test-Chan/Armature/Skeleton3D" index="2"]
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="Chan/Avatar"]
+target = NodePath("../Test-Chan/Armature/Skeleton3D/Body")
+
+[node name="GroundRing" type="MeshInstance3D" parent="Chan/Avatar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 mesh = SubResource("TorusMesh_rbtmk")
 skeleton = NodePath("")
 
 [node name="Kun" type="Node3D" parent="."]
 
-[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="Kun"]
-target = NodePath("../XRBodyModifier3D/Test-Kun/Armature/Skeleton3D/Body")
+[node name="Avatar" type="XRNode3D" parent="Kun"]
+tracker = &"/user/body_tracker"
 
-[node name="XRBodyModifier3D" type="XRBodyModifier3D" parent="Kun"]
-target = NodePath("Test-Kun/Armature/Skeleton3D")
-
-[node name="Test-Kun" parent="Kun/XRBodyModifier3D" instance=ExtResource("2_67k0v")]
+[node name="Test-Kun" parent="Kun/Avatar" instance=ExtResource("2_67k0v")]
 unique_name_in_owner = true
 
-[node name="Body" parent="Kun/XRBodyModifier3D/Test-Kun/Armature/Skeleton3D" index="0"]
+[node name="Body" parent="Kun/Avatar/Test-Kun/Armature/Skeleton3D" index="0"]
 blend_shapes/Cheek_Puff_Left = 1.28996e-05
 blend_shapes/Cheek_Puff_Right = 1.28996e-05
 blend_shapes/Eye_Left_Left = 0.297788
@@ -175,10 +174,15 @@ blend_shapes/mouthPressRight = 0.0310566
 blend_shapes/mouthStretchLeft = 0.0145674
 blend_shapes/mouthStretchRight = 0.00253638
 
-[node name="Hair" parent="Kun/XRBodyModifier3D/Test-Kun/Armature/Skeleton3D" index="1"]
+[node name="Hair" parent="Kun/Avatar/Test-Kun/Armature/Skeleton3D" index="1"]
 visible = false
 
-[node name="GroundRing" type="MeshInstance3D" parent="Kun/XRBodyModifier3D"]
+[node name="XRBodyModifier3D" type="XRBodyModifier3D" parent="Kun/Avatar/Test-Kun/Armature/Skeleton3D" index="2"]
+
+[node name="XRFaceModifier3D" type="XRFaceModifier3D" parent="Kun/Avatar"]
+target = NodePath("../Test-Kun/Armature/Skeleton3D/Body")
+
+[node name="GroundRing" type="MeshInstance3D" parent="Kun/Avatar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 mesh = SubResource("TorusMesh_rbtmk")
 skeleton = NodePath("")
@@ -186,5 +190,5 @@ skeleton = NodePath("")
 [connection signal="button_pressed" from="XROrigin3D/LeftController" to="." method="_on_left_controller_button_pressed"]
 [connection signal="button_pressed" from="XROrigin3D/RightController" to="." method="_on_right_controller_button_pressed"]
 
-[editable path="Chan/XRBodyModifier3D/Test-Chan"]
-[editable path="Kun/XRBodyModifier3D/Test-Kun"]
+[editable path="Chan/Avatar/Test-Chan"]
+[editable path="Kun/Avatar/Test-Kun"]

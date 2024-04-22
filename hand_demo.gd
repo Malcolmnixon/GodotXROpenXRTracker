@@ -1,6 +1,9 @@
 extends Node3D
 
 
+@export var left_hand_skeleton : Skeleton3D
+@export var right_hand_skeleton : Skeleton3D
+
 var skeleton_scale := 1.0
 
 
@@ -15,13 +18,13 @@ func _on_left_controller_button_pressed(name: String) -> void:
 	match name:
 		"by_button":
 			skeleton_scale = clampf(skeleton_scale + 0.1, 0.1, 2.0)
-			%"LeftHandHumanoid/LeftHandHumanoid/Skeleton3D".motion_scale = skeleton_scale
-			%"RightHandHumanoid/RightHandHumanoid/Skeleton3D".motion_scale = skeleton_scale
+			left_hand_skeleton.motion_scale = skeleton_scale
+			right_hand_skeleton.motion_scale = skeleton_scale
 
 		"ax_button":
 			skeleton_scale = clampf(skeleton_scale - 0.1, 0.1, 2.0)
-			%"LeftHandHumanoid/LeftHandHumanoid/Skeleton3D".motion_scale = skeleton_scale
-			%"RightHandHumanoid/RightHandHumanoid/Skeleton3D".motion_scale = skeleton_scale
+			left_hand_skeleton.motion_scale = skeleton_scale
+			right_hand_skeleton.motion_scale = skeleton_scale
 
 
 func _on_right_controller_button_pressed(name: String) -> void:

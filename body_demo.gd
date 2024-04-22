@@ -15,13 +15,13 @@ func _on_left_controller_button_pressed(name: String) -> void:
 	match name:
 		"by_button":
 			skeleton_scale = clampf(skeleton_scale + 0.1, 0.1, 2.0)
-			%"Test-Chan/Armature/Skeleton3D".motion_scale = skeleton_scale
-			%"Test-Kun/Armature/Skeleton3D".motion_scale = skeleton_scale
+			$"Chan/Avatar/Test-Chan/Armature/Skeleton3D".motion_scale = skeleton_scale
+			$"Kun/Avatar/Test-Kun/Armature/Skeleton3D".motion_scale = skeleton_scale
 
 		"ax_button":
 			skeleton_scale = clampf(skeleton_scale - 0.1, 0.1, 2.0)
-			%"Test-Chan/Armature/Skeleton3D".motion_scale = skeleton_scale
-			%"Test-Kun/Armature/Skeleton3D".motion_scale = skeleton_scale
+			$"Chan/Avatar/Test-Chan/Armature/Skeleton3D".motion_scale = skeleton_scale
+			$"Kun/Avatar/Test-Kun/Armature/Skeleton3D".motion_scale = skeleton_scale
 
 
 func _on_right_controller_button_pressed(name: String) -> void:
